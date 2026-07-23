@@ -7,11 +7,11 @@ slint::include_modules!();
 #[tokio::main]
 async fn main() -> Result<(), slint::PlatformError> {
 
-    let _ = zip_latest();
+    let _ = zip_latest().await;
 
-    info("This is very cool!").await;
-    warn("wow yellow! scarryyy").await;
-    error("red error").await;
+    info("Wow this is so fast!").await;
+    warn("I love Rust!").await;
+    error("no I actually don't really like it").await;
 
     let ui = Window::new()?;
     let ui_weak = ui.as_weak();

@@ -78,7 +78,7 @@ pub async fn zip_latest() -> std::io::Result<()> {
 
         if log_path.exists() {
 
-            let buffer = Vec::new();
+            let buffer = fs::read(&log_path)?;
 
             let log_date = now.format("%Y-%m-%d_%H-%M").to_string();
             let zip_path = logs_path.join(format!("{}.zip", log_date));
@@ -87,8 +87,8 @@ pub async fn zip_latest() -> std::io::Result<()> {
 
             let options: FileOptions<()> = FileOptions::default().compression_method(zip::CompressionMethod::Xz);
 
-            let _ = zip.start_file(format!("{}.log", log_date), options)?;
-            let _ = zip.write_all(&buffer);
+            zip.start_file(format!("{}.log", log_date), options)?;
+            zip.write_all(&buffer);
 
             zip.finish()?;
 
