@@ -1,0 +1,16 @@
+[package]
+name = "FerrisLauncher"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+i-slint-backend-winit = "1.17.1"
+slint = "1.7"
+chrono = "0.4.45"
+dirs = "6.0.0"
+zip = "9.0.0-pre2"
+
+[build-dependencies]
+lucide-slint = "1.25.0"
+slint-build = "1.7"
+dirs = "5"
