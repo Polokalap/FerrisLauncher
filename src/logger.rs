@@ -1,4 +1,4 @@
-use std::fs;
+use std::{fs};
 use std::fs::File;
 use std::io::Write;
 use chrono::{ Local };
@@ -10,28 +10,28 @@ enum Type {
     ERROR
 }
 
-pub fn info(message_str: &str) {
+pub async fn info(message_str: &str) {
 
     let message = message_str.to_string();
-    log_message(message, Type::INFO);
+    let _ = log_message(message, Type::INFO).await;
 
 }
 
-pub fn warn(message_str: &str) {
+pub async fn warn(message_str: &str) {
 
     let message = message_str.to_string();
-    log_message(message, Type::WARN);
+    let _ = log_message(message, Type::WARN).await;
 
 }
 
-pub fn error(message_str: &str) {
+pub async fn error(message_str: &str) {
 
     let message = message_str.to_string();
-    log_message(message, Type::ERROR);
+    let _ = log_message(message, Type::ERROR).await;
 
 }
 
-fn log_message(message: String, log_type: Type) -> std::io::Result<()> {
+async fn log_message(message: String, log_type: Type) -> std::io::Result<()> {
 
     // Logging to console
 
@@ -47,49 +47,61 @@ fn log_message(message: String, log_type: Type) -> std::io::Result<()> {
     let root = dirs::home_dir().expect("Could not find home directory");
     let logs_path = root.join(".ferris/launcher/logs");
     let log_path = logs_path.join("latest.log");
-    let current_log = fs::read_to_string(&log_path)?;
 
-    fs::create_dir_all(&logs_path)?;
+    tokio::task::spawn_blocking(move || {
 
-    fs::write(&log_path, format!("{}\n{}", current_log, log_message))?;
+        let current_log = fs::read_to_string(&log_path)?;
 
-    Ok(())
+        fs::create_dir_all(&logs_path)?;
+
+        fs::write(&log_path, format!("{}{}\n", current_log, log_message))?;
+
+        Ok(())
+
+    })
+        .await
+        .expect("Could not log to file because task panicked")
 
 }
 
-pub fn zip_latest() -> std::io::Result<()> {
+pub async fn zip_latest() -> std::io::Result<()> {
 
-    let now = Local::now();
+    tokio::task::spawn_blocking(|| {
 
-    let root = dirs::home_dir().expect("Could not find home directory");
-    let logs_path = root.join(".ferris/launcher/logs");
-    let log_path = logs_path.join("latest.log");
+        let now = Local::now();
 
-    fs::create_dir_all(&logs_path)?;
+        let root = dirs::home_dir().expect("Could not find home directory");
+        let logs_path = root.join(".ferris/launcher/logs");
+        let log_path = logs_path.join("latest.log");
 
-    if (log_path.exists()) {
+        fs::create_dir_all(&logs_path)?;
 
-        let mut buffer = Vec::new();
+        if log_path.exists() {
 
-        let log_date = now.format("%Y-%m-%d_%H-%M").to_string();
-        let zip_path = logs_path.join(format!("{}.zip", log_date));
-        let zip_file = File::create(&zip_path)?;
-        let mut zip = ZipWriter::new(zip_file);
+            let buffer = Vec::new();
 
-        let options: FileOptions<()> = FileOptions::default().compression_method(zip::CompressionMethod::Xz);
+            let log_date = now.format("%Y-%m-%d_%H-%M").to_string();
+            let zip_path = logs_path.join(format!("{}.zip", log_date));
+            let zip_file = File::create(&zip_path)?;
+            let mut zip = ZipWriter::new(zip_file);
 
-        zip.start_file(format!("{}.log", log_date), options)?;
-        zip.write_all(&buffer);
+            let options: FileOptions<()> = FileOptions::default().compression_method(zip::CompressionMethod::Xz);
 
-        zip.finish()?;
+            let _ = zip.start_file(format!("{}.log", log_date), options)?;
+            let _ = zip.write_all(&buffer);
 
-        fs::remove_file(&log_path)?;
+            zip.finish()?;
 
-    }
+            fs::remove_file(&log_path)?;
 
-    File::create(&log_path)?;
+        }
 
-    Ok(())
+        File::create(&log_path)?;
+        Ok(())
+
+    })
+    .await
+    .expect("Could not spawn zip latest task")
 
 }
 
@@ -101,7 +113,6 @@ fn get_color(log_type: &Type) -> String {
         Type::INFO => value = "\x1b[0m",
         Type::WARN => value = "\x1b[33m",
         Type::ERROR => value = "\x1b[31m",
-        _ => value = "\x1b[0m",
     }
 
     value.to_string()
@@ -114,7 +125,6 @@ fn get_type(log_type: &Type) -> String {
         Type::INFO => String::from("INFO"),
         Type::WARN => String::from("WARN"),
         Type::ERROR => String::from("ERROR"),
-        _ => String::from("?"),
     }
 
 }

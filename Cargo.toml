@@ -9,6 +9,7 @@ slint = "1.7"
 chrono = "0.4.45"
 dirs = "6.0.0"
 zip = "9.0.0-pre2"
+tokio = { version = "1", features = ["rt", "rt-multi-thread", "macros", "fs"] }
 
 [build-dependencies]
 lucide-slint = "1.25.0"

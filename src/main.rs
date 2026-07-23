@@ -4,13 +4,14 @@ pub mod logger;
 
 slint::include_modules!();
 
-fn main() -> Result<(), slint::PlatformError> {
+#[tokio::main]
+async fn main() -> Result<(), slint::PlatformError> {
 
-    zip_latest();
+    let _ = zip_latest();
 
-    info("meow");
-    warn("meow");
-    error("meow");
+    info("This is very cool!").await;
+    warn("wow yellow! scarryyy").await;
+    error("red error").await;
 
     let ui = Window::new()?;
     let ui_weak = ui.as_weak();
