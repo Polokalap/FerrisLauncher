@@ -24,9 +24,8 @@ pub async fn get_head(name_str: &str) -> Result<PathBuf, Box<dyn Error + Send + 
     let url = profile.textures.skin.url;
     let head_path = format!("{}/head.png", uuid);
     let final_head_file = skins_path.join(&head_path);
-    fs::copy(&final_skin_file, &final_head_file)?;
 
-    let download = if final_skin_file.exists() {
+    let download = if final_skin_file.exists() || final_head_file.exists() {
 
         let modified = fs::metadata(&final_skin_file)?.modified()?;
         SystemTime::now().duration_since(modified)? > Duration::from_secs(60 * 60 * 24)
@@ -40,6 +39,8 @@ pub async fn get_head(name_str: &str) -> Result<PathBuf, Box<dyn Error + Send + 
     if download {
 
         download_png(&url, final_skin_file.to_str().unwrap()).await?;
+
+        fs::copy(&final_skin_file, &final_head_file)?;
 
         let head = ImageReader::open(&final_skin_file)?.decode()?;
 

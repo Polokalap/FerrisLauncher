@@ -11,17 +11,9 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17f4922c-7825-4771-a70c-c39d4ade45bf" name="Changes" comment="Made the logger actually log the file to the disk">
-      <change afterPath="$PROJECT_DIR$/src/mojang/mod.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mojang/player.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/skin/head.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/skin/mod.rs" afterDir="false" />
+    <list default="true" id="17f4922c-7825-4771-a70c-c39d4ade45bf" name="Changes" comment="Added player skin downloading ability">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logger.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/logger.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/Window.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/Window.slint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/skin/head.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/skin/head.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +141,7 @@
       <workItem from="1784842733605" duration="115000" />
       <workItem from="1784842873471" duration="7230000" />
       <workItem from="1784906505597" duration="28478000" />
-      <workItem from="1784992047395" duration="16947000" />
+      <workItem from="1784992047395" duration="17554000" />
     </task>
     <task id="LOCAL-00001" summary="Created logger">
       <option name="closed" value="true" />
@@ -191,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784846037324</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added player skin downloading ability">
+      <option name="closed" value="true" />
+      <created>1785024806441</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1785024806441</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +226,8 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Made logging and zipping of old logs async :3" />
     <MESSAGE value="Made the logger actually log the file to the disk" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made the logger actually log the file to the disk" />
+    <MESSAGE value="Added player skin downloading ability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added player skin downloading ability" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
