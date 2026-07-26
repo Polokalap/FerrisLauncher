@@ -36,7 +36,7 @@ async fn log_message(message: String, log_type: Type) -> std::io::Result<()> {
     // Logging to console
 
     let now = Local::now();
-    let time = now.format("%Y:%m:%d %H:%M").to_string();
+    let time = now.format("%Y:%m:%d %H:%M:%S").to_string();
     let color = get_color(&log_type);
 
     println!("{}[{}] {}\x1b[0m", color, time, message);
@@ -80,7 +80,7 @@ pub async fn zip_latest() -> std::io::Result<()> {
 
             let buffer = fs::read(&log_path)?;
 
-            let log_date = now.format("%Y-%m-%d_%H-%M").to_string();
+            let log_date = now.format("%Y-%m-%d_%H-%M-%S").to_string();
             let zip_path = logs_path.join(format!("{}.zip", log_date));
             let zip_file = File::create(&zip_path)?;
             let mut zip = ZipWriter::new(zip_file);

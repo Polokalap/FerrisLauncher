@@ -4,12 +4,17 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-i-slint-backend-winit = "1.17.1"
 slint = "1.7"
 chrono = "0.4.45"
 dirs = "6.0.0"
 zip = "9.0.0-pre2"
 tokio = { version = "1", features = ["rt", "rt-multi-thread", "macros", "fs"] }
+reqwest = { version = "0.12", features = ["json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1.0.69"
+image = "0.25"
+base64 = "0.22"
 
 [build-dependencies]
 lucide-slint = "1.25.0"
