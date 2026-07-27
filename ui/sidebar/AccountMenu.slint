@@ -1,0 +1,65 @@
+import { SidebarState } from "../state.slint";
+import { AccountMenuState } from "../state.slint";
+import "../fonts/Poppins.ttf";
+
+export component AccountMenu {
+    height: 100%;
+    width: 100%;
+
+    VerticalLayout {
+        alignment: end;
+        padding: SidebarState.is_open ? 10px : 3px;
+        padding-bottom: 10px;
+        animate padding {
+            duration: 100ms;
+        }
+        Rectangle {
+            background: touch-area.has-hover ? #2e2e2eaa : #1e1e1eaa;
+            animate background {
+                duration: 100ms;
+            }
+            border-radius: 10px;
+            height: 50px;
+            animate height {
+                duration: 100ms;
+            }
+            width: 100%;
+            touch-area := TouchArea {
+                mouse-cursor: pointer;
+            }
+            VerticalLayout {
+                alignment: center;
+                HorizontalLayout {
+                    alignment: start;
+                    padding: 3px;
+                    padding-top: 0;
+                    spacing: SidebarState.is_open ? 10px : 0;
+                    animate spacing {
+                        duration: 200ms;
+                        easing: ease-in-out;
+                    }
+                    Image {
+                        source: AccountMenuState.head-image;
+                        width: 48px;
+                        height: 48px;
+                        image-fit: cover;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    Text {
+                        text: AccountMenuState.player-name;
+                        font-size: 18px;
+                        font-family: "Poppins";
+                        vertical-alignment: center;
+                        opacity: SidebarState.is_open ? 1 : 0;
+                        animate opacity {
+                            duration: 150ms;
+                            easing: ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

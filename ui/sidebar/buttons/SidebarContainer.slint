@@ -1,0 +1,17 @@
+import { InstancesButton } from "InstancesButton.slint";
+import { ModsButton } from "ModsButton.slint";
+
+export component SidebarContainer {
+    width: 100%;
+    height: 100%;
+
+    VerticalLayout {
+    alignment: end;
+        VerticalLayout {
+            alignment: start;
+            height: 90%;
+            InstancesButton { }
+            ModsButton { }
+        }
+    }
+}

@@ -3,7 +3,6 @@ use std::sync::{Mutex, OnceLock};
 use serde::Deserialize;
 use serde_json::Value;
 use base64::{engine::general_purpose, DecodeError, Engine as _};
-use crate::logger::info;
 
 static user_cache: OnceLock<Mutex<HashMap<String, User>>> = OnceLock::new();
 static profile_cache: OnceLock<Mutex<HashMap<String, Profile>>> = OnceLock::new();

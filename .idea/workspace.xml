@@ -11,9 +11,24 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17f4922c-7825-4771-a70c-c39d4ade45bf" name="Changes" comment="Added player skin downloading ability">
+    <list default="true" id="17f4922c-7825-4771-a70c-c39d4ade45bf" name="Changes" comment="Issue fixed with player skin downloading">
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/launcher/mod.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/launcher/player_manager.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/heads/unknown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/fonts/Poppins.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/sidebar/AccountMenu.slint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/sidebar/Sidebar.slint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/sidebar/buttons/InstancesButton.slint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/sidebar/buttons/ModsButton.slint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/sidebar/buttons/SidebarContainer.slint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/state.slint" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mojang/player.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/mojang/player.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/skin/head.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/skin/head.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/Window.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/Window.slint" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +36,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="13" />
+    <option name="cachedIndexableFilesCount" value="21" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
   <component name="FileTemplateManagerImpl">
@@ -82,7 +97,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/polokalap/RustroverProjects/FerrisLauncher/src/skin",
+    "last_opened_file_path": "/home/polokalap/RustroverProjects/FerrisLauncher/ui/sidebar/buttons",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,6 +105,7 @@
     "nodejs_package_manager_path": "npm",
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
+    "org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/launcher/player_manager.rs": "true",
     "org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/mojang/player.rs": "true",
     "org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/skin/head.rs": "true",
     "org.rust.first.attach.projects": "true",
@@ -99,12 +115,17 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ui/sidebar/buttons" />
+      <recent name="$PROJECT_DIR$/src/launcher" />
+      <recent name="$PROJECT_DIR$/ui/fonts" />
       <recent name="$PROJECT_DIR$/src/skin" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/mojang" />
       <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/static/heads" />
+      <recent name="$PROJECT_DIR$/ui/sidebar" />
+      <recent name="$PROJECT_DIR$/src/mojang" />
     </key>
   </component>
   <component name="RunManager">
@@ -141,7 +162,12 @@
       <workItem from="1784842733605" duration="115000" />
       <workItem from="1784842873471" duration="7230000" />
       <workItem from="1784906505597" duration="28478000" />
-      <workItem from="1784992047395" duration="17554000" />
+      <workItem from="1784992047395" duration="19722000" />
+      <workItem from="1785066244763" duration="9104000" />
+      <workItem from="1785077726224" duration="9566000" />
+      <workItem from="1785106473573" duration="4976000" />
+      <workItem from="1785165123221" duration="160000" />
+      <workItem from="1785165317704" duration="14634000" />
     </task>
     <task id="LOCAL-00001" summary="Created logger">
       <option name="closed" value="true" />
@@ -191,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785024806441</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Issue fixed with player skin downloading">
+      <option name="closed" value="true" />
+      <created>1785025456375</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1785025456375</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +261,8 @@
     <MESSAGE value="Made logging and zipping of old logs async :3" />
     <MESSAGE value="Made the logger actually log the file to the disk" />
     <MESSAGE value="Added player skin downloading ability" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added player skin downloading ability" />
+    <MESSAGE value="Issue fixed with player skin downloading" />
+    <option name="LAST_COMMIT_MESSAGE" value="Issue fixed with player skin downloading" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

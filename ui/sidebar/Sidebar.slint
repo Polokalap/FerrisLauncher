@@ -1,0 +1,63 @@
+import { AccountMenu } from "./AccountMenu.slint";
+import { SidebarState } from "../state.slint";
+import { SidebarContainer } from "buttons/SidebarContainer.slint";
+import { IconDisplay, IconSet } from "@lucide";
+
+export component Sidebar {
+    height: 100%;
+    width: 100%;
+
+    HorizontalLayout {
+        alignment: start;
+        padding: 15px;
+        Rectangle {
+            background: #161616;
+            border-radius: 15px;
+            drop-shadow-offset-y: 3px;
+            drop-shadow-blur: 20px;
+            drop-shadow-color: #00000033;
+            height: 100%;
+            width: SidebarState.is_open ? 200px : 60px;
+            animate width {
+                duration: 150ms;
+                easing: ease-in-out;
+            }
+            SidebarContainer {
+
+            }
+            AccountMenu {
+
+            }
+            HorizontalLayout {
+                alignment: start;
+                Rectangle {
+                    width: 60px;
+                    VerticalLayout {
+                        alignment: start;
+                        padding-top: 15px;
+                        width: 60px;
+                        HorizontalLayout {
+                            width: 60px;
+                            alignment: center;
+                            IconDisplay {
+                                icon: SidebarState.is_open ? IconSet.PanelLeftClose : IconSet.PanelLeftOpen;
+                                stroke: #8a8a8a55;
+                                stroke-width: 2;
+                                size: 32px;
+                                background: touch-area.has-hover ? #2a2a2a : transparent;
+                                border-radius: 5px;
+                                animate background {
+                                    duration: 100ms;
+                                }
+                                touch-area := TouchArea {
+                                    mouse-cursor: pointer;
+                                    clicked => { SidebarState.is_open = !SidebarState.is_open; }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
