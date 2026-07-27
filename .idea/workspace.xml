@@ -11,24 +11,11 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17f4922c-7825-4771-a70c-c39d4ade45bf" name="Changes" comment="Issue fixed with player skin downloading">
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/launcher/mod.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/launcher/player_manager.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/heads/unknown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/fonts/Poppins.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/sidebar/AccountMenu.slint" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/sidebar/Sidebar.slint" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/sidebar/buttons/InstancesButton.slint" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/sidebar/buttons/ModsButton.slint" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/sidebar/buttons/SidebarContainer.slint" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/state.slint" afterDir="false" />
+    <list default="true" id="17f4922c-7825-4771-a70c-c39d4ade45bf" name="Changes" comment="Added license &amp; created UI base">
+      <change afterPath="$PROJECT_DIR$/ui/fonts/Lobster.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mojang/player.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/mojang/player.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/skin/head.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/skin/head.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/Window.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/Window.slint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/sidebar/AccountMenu.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/sidebar/AccountMenu.slint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/sidebar/Sidebar.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/sidebar/Sidebar.slint" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +84,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/polokalap/RustroverProjects/FerrisLauncher/ui/sidebar/buttons",
+    "last_opened_file_path": "/home/polokalap/RustroverProjects/FerrisLauncher/ui/fonts",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -115,9 +102,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ui/fonts" />
       <recent name="$PROJECT_DIR$/ui/sidebar/buttons" />
       <recent name="$PROJECT_DIR$/src/launcher" />
-      <recent name="$PROJECT_DIR$/ui/fonts" />
       <recent name="$PROJECT_DIR$/src/skin" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -167,7 +154,7 @@
       <workItem from="1785077726224" duration="9566000" />
       <workItem from="1785106473573" duration="4976000" />
       <workItem from="1785165123221" duration="160000" />
-      <workItem from="1785165317704" duration="14634000" />
+      <workItem from="1785165317704" duration="21412000" />
     </task>
     <task id="LOCAL-00001" summary="Created logger">
       <option name="closed" value="true" />
@@ -225,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785025456375</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added license &amp; created UI base">
+      <option name="closed" value="true" />
+      <created>1785182289811</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1785182289811</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +257,8 @@
     <MESSAGE value="Made the logger actually log the file to the disk" />
     <MESSAGE value="Added player skin downloading ability" />
     <MESSAGE value="Issue fixed with player skin downloading" />
-    <option name="LAST_COMMIT_MESSAGE" value="Issue fixed with player skin downloading" />
+    <MESSAGE value="Added license &amp; created UI base" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added license &amp; created UI base" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

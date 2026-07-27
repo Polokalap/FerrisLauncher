@@ -2,6 +2,7 @@ import { AccountMenu } from "./AccountMenu.slint";
 import { SidebarState } from "../state.slint";
 import { SidebarContainer } from "buttons/SidebarContainer.slint";
 import { IconDisplay, IconSet } from "@lucide";
+import "../../fonts/Lobster.ttf";
 
 export component Sidebar {
     height: 100%;
@@ -53,6 +54,29 @@ export component Sidebar {
                                     mouse-cursor: pointer;
                                     clicked => { SidebarState.is_open = !SidebarState.is_open; }
                                 }
+                            }
+                        }
+                    }
+                }
+                VerticalLayout {
+                    alignment: start;
+                    padding: 15px;
+                    padding-left: 0;
+                    Rectangle {
+                        padding: 20px;
+                        height: SidebarState.is_open ? 30px : 50px;
+                        animate height {
+                            duration: 200ms;
+                            easing: ease-in-out;
+                        }
+                        Text {
+                            text: "Ferris Launcher";
+                            font-size: 22px;
+                            font-family: "Lobster";
+                            opacity: SidebarState.is_open ? 1 : 0;
+                            animate opacity {
+                                duration: 100ms;
+                                easing: ease-in-out;
                             }
                         }
                     }
