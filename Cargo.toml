@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-slint = "1.7"
+slint = "1.17.1"
 chrono = "0.4.45"
 dirs = "6.0.0"
 zip = "9.0.0-pre2"
@@ -18,5 +18,5 @@ base64 = "0.22"
 
 [build-dependencies]
 lucide-slint = "1.25.0"
-slint-build = "1.7"
+slint-build = "1.17.1"
 dirs = "5"

@@ -1,4 +1,6 @@
 import { Sidebar } from "sidebar/Sidebar.slint";
+import { MainMenu } from "menus/MainMenu.slint";
+import { SidebarState } from "state.slint";
 export { AccountMenuState } from "state.slint";
 export { SidebarState } from "state.slint";
 
@@ -8,10 +10,16 @@ export component Window inherits Window {
     background: #1e1e1e;
     title: "Ferris Launcher";
 
-    Sidebar {
-        height: 712px;
-        width: 1200px;
-        x: -0px;
+    HorizontalLayout {
+
+        Sidebar {
+            width: 60px;
+        }
+
+        MainMenu {
+            width: 100%;
+        }
+
     }
 
 }

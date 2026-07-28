@@ -1,5 +1,5 @@
-import { InstancesButton } from "InstancesButton.slint";
-import { ModsButton } from "ModsButton.slint";
+import { SidebarMenu } from "SidebarMenu.slint";
+import { IconSet } from "@lucide";
 
 export component SidebarContainer {
     width: 100%;
@@ -10,8 +10,21 @@ export component SidebarContainer {
         VerticalLayout {
             alignment: start;
             height: 90%;
-            InstancesButton { }
-            ModsButton { }
+            SidebarMenu {
+                text: "Instances";
+                icon: IconSet.Box;
+                id: 0;
+            }
+            SidebarMenu {
+                text: "Mods";
+                icon: IconSet.Package;
+                id: 1;
+            }
+            SidebarMenu {
+                text: "Settings";
+                icon: IconSet.Settings;
+                id: 2;
+            }
         }
     }
 }

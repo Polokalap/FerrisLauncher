@@ -61,7 +61,7 @@ export component Sidebar {
                 VerticalLayout {
                     alignment: start;
                     padding: 15px;
-                    padding-left: 0;
+                    padding-left: -5px;
                     Rectangle {
                         padding: 20px;
                         height: SidebarState.is_open ? 30px : 50px;
@@ -75,7 +75,7 @@ export component Sidebar {
                             font-family: "Lobster";
                             opacity: SidebarState.is_open ? 1 : 0;
                             animate opacity {
-                                duration: 100ms;
+                                duration: 200ms;
                                 easing: ease-in-out;
                             }
                         }

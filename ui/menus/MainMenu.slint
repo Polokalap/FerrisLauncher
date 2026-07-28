@@ -1,0 +1,46 @@
+import { SidebarState } from "../state.slint";
+import { SidebarMenu } from "../state.slint";
+
+export component MainMenu {
+    width: 100%;
+    height: 100%;
+
+    HorizontalLayout {
+        alignment: end;
+        padding: 15px;
+        padding-right: 75px;
+        padding-left: SidebarState.is_open ? 165px : 25px;
+
+        animate padding-left {
+            duration: 100ms;
+            easing: ease-in-out;
+        }
+
+        Rectangle {
+
+            width: 100%;
+            height: 100%;
+
+            opacity: SidebarMenu.is_animating ? 0 : 1;
+            animate opacity {
+                duration: 200ms;
+                easing: ease-in-out;
+            }
+
+            states [
+                selected when SidebarMenu.selected == 0: {
+                    background: red;
+                }
+                selected when SidebarMenu.selected == 1: {
+                    background: green;
+                }
+                selected when SidebarMenu.selected == 2: {
+                    background: blue;
+                }
+            ]
+
+        }
+
+    }
+
+}

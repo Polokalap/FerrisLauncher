@@ -11,11 +11,20 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17f4922c-7825-4771-a70c-c39d4ade45bf" name="Changes" comment="Added license &amp; created UI base">
-      <change afterPath="$PROJECT_DIR$/ui/fonts/Lobster.ttf" afterDir="false" />
+    <list default="true" id="17f4922c-7825-4771-a70c-c39d4ade45bf" name="Changes" comment="Added FerrisLauncher text in the sidebar with an opening animation">
+      <change afterPath="$PROJECT_DIR$/src/launcher/ui_manager.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/menus/MainMenu.slint" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/sidebar/AccountMenu.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/sidebar/AccountMenu.slint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/launcher/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/launcher/mod.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/launcher/player_manager.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/launcher/player_manager.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/Window.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/Window.slint" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/sidebar/Sidebar.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/sidebar/Sidebar.slint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/sidebar/buttons/InstancesButton.slint" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/sidebar/buttons/ModsButton.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/sidebar/buttons/SidebarMenu.slint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/sidebar/buttons/SidebarContainer.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/sidebar/buttons/SidebarContainer.slint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/state.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/state.slint" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +32,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="21" />
+    <option name="cachedIndexableFilesCount" value="25" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
   <component name="FileTemplateManagerImpl">
@@ -84,7 +93,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/polokalap/RustroverProjects/FerrisLauncher/ui/fonts",
+    "last_opened_file_path": "/home/polokalap/RustroverProjects/FerrisLauncher/src/launcher/ui",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -93,6 +102,7 @@
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
     "org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/launcher/player_manager.rs": "true",
+    "org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/launcher/ui/ui_manager.rs": "true",
     "org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/mojang/player.rs": "true",
     "org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/skin/head.rs": "true",
     "org.rust.first.attach.projects": "true",
@@ -102,13 +112,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/launcher/ui" />
       <recent name="$PROJECT_DIR$/ui/fonts" />
       <recent name="$PROJECT_DIR$/ui/sidebar/buttons" />
       <recent name="$PROJECT_DIR$/src/launcher" />
       <recent name="$PROJECT_DIR$/src/skin" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/launcher" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/static/heads" />
       <recent name="$PROJECT_DIR$/ui/sidebar" />
@@ -154,7 +165,9 @@
       <workItem from="1785077726224" duration="9566000" />
       <workItem from="1785106473573" duration="4976000" />
       <workItem from="1785165123221" duration="160000" />
-      <workItem from="1785165317704" duration="21412000" />
+      <workItem from="1785165317704" duration="27806000" />
+      <workItem from="1785239267708" duration="6336000" />
+      <workItem from="1785252888037" duration="24187000" />
     </task>
     <task id="LOCAL-00001" summary="Created logger">
       <option name="closed" value="true" />
@@ -220,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785182289811</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added FerrisLauncher text in the sidebar with an opening animation">
+      <option name="closed" value="true" />
+      <created>1785190435600</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1785190435600</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,7 +279,8 @@
     <MESSAGE value="Added player skin downloading ability" />
     <MESSAGE value="Issue fixed with player skin downloading" />
     <MESSAGE value="Added license &amp; created UI base" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added license &amp; created UI base" />
+    <MESSAGE value="Added FerrisLauncher text in the sidebar with an opening animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added FerrisLauncher text in the sidebar with an opening animation" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

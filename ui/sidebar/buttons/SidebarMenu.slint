@@ -1,25 +1,39 @@
 import { SidebarState } from "../../state.slint";
-import { IconDisplay, IconSet } from "@lucide";
+import { SidebarMenu as SidebarMenuState, SidebarMenu } from "../../state.slint";
+import { IconDisplay, IconSet, Icon } from "@lucide";
 
-export component ModsButton {
+export component SidebarMenu {
+    in-out property <string> text: "?";
+    in-out property <Icon> icon: IconSet.Package;
+    in-out property <int> id;
+
     width: 100%;
 
     VerticalLayout {
         alignment: start;
         padding: SidebarState.is_open ? 15px : 11px;
-        padding-top: 5px;
+        padding-top: SidebarState.is_open ? -10px : 0;
         animate padding {
+            duration: 200ms;
+            easing: ease-in-out;
+        }
+        animate padding-top {
             duration: 200ms;
             easing: ease-in-out;
         }
         Rectangle {
             padding: SidebarState.is_open ? 3px : 4px;
-            background: touch-area.has-hover ? #2e2e2eaa : transparent;
+            background: (id == SidebarMenuState.selected)
+                ? #2e2e2eaa
+                : (touch-area.has-hover ? #2e2e2eaa : transparent);
             animate background {
                 duration: 100ms;
             }
             touch-area := TouchArea {
                 mouse-cursor: pointer;
+                clicked => {
+                    SidebarMenuState.selected = id;
+                }
             }
             border-radius: 10px;
             HorizontalLayout {
@@ -30,7 +44,7 @@ export component ModsButton {
                     easing: ease-in-out;
                 }
                 IconDisplay {
-                    icon: IconSet.Package;
+                    icon: icon;
                     stroke: #8a8a8a55;
                     stroke-width: 2;
                     size: SidebarState.is_open ? 28px : 38px;
@@ -40,7 +54,7 @@ export component ModsButton {
                     }
                 }
                 Text {
-                    text: "Mods";
+                    text: text;
                     font-size: 16px;
                     vertical-alignment: center;
                     color: #afafafaa;
@@ -54,5 +68,4 @@ export component ModsButton {
             }
         }
     }
-
 }
