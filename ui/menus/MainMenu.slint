@@ -33,14 +33,10 @@ export component MainMenu {
 
             InstancesMenu {
                 visible: SidebarMenu.selected == 0;
+                instances: root.instances;
             }
 
         }
 
     }
-
-    InstancesMenu {
-        instances: root.instances;
-    }
-
 }

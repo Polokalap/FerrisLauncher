@@ -2,7 +2,7 @@ import { IconDisplay, IconSet, Icon } from "@lucide";
 import "../fonts/Poppins.ttf";
 import { Button } from "std-widgets.slint";
 import { Instance } from "Instance.slint";
-import { SidebarState, InstanceData } from "../state.slint";
+import { SidebarState, InstanceData, SidebarMenu } from "../state.slint";
 
 export component InstancesMenu {
     in-out property <int> columns: 4;
@@ -12,7 +12,7 @@ export component InstancesMenu {
 
     VerticalLayout {
         alignment: start;
-        padding-left: SidebarState.is_open ? 165px : 25px;
+        padding-left: 25px;
         padding-top: 15px;
         animate padding-left {
             duration: 100ms;
@@ -30,12 +30,43 @@ export component InstancesMenu {
                     name: instance.name;
                     version: instance.version;
 
-                    icon: instance.icon == "Box" ? IconSet.Box :
-                          instance.icon == "Package" ? IconSet.Package :
+                    icon: instance.icon == "box" ? IconSet.Box :
+                          instance.icon == "package" ? IconSet.Package :
                           IconSet.Box;
 
                     row: Math.floor(i / columns);
                     col: Math.mod(i, columns);
+                }
+
+                Rectangle {
+                    width: SidebarState.is_open ? 218px : 256px;
+                    height: SidebarState.is_open ? 130px : 146px;
+                    row: Math.floor(instances.length / columns);
+                    col: Math.mod(instances.length, columns);
+                    border-radius: 15px;
+                    border-color: #33ff55aa;
+                    background: touch-area.has-hover ? #33ff5588 : #33ff5555;
+                    animate background {
+                        duration: 200ms;
+                        easing: ease-in-out;
+                    }
+                    border-width: 2px;
+                    clip: true;
+                    touch-area := TouchArea {
+                        mouse-cursor: pointer;
+                    }
+                    VerticalLayout {
+                        alignment: center;
+                        HorizontalLayout {
+                            alignment: center;
+                            IconDisplay {
+                                icon: IconSet.Plus;
+                                stroke: #33ff55aa;
+                                stroke-width: 2;
+                                size: 96px;
+                            }
+                        }
+                    }
                 }
 
             }

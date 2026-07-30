@@ -28,37 +28,49 @@ pub async fn init() -> Result<(), Box<dyn std::error::Error>> {
         "Quilt 1.21.11",
         "Box",
         instances.clone(),
-    )?;
+    ).await?;
     add_instance(
         "Meow",
         "Quilt 1.21.11",
         "Box",
         instances.clone(),
-    )?;
+    ).await?;
     add_instance(
         "Meow",
         "Quilt 1.21.11",
         "Box",
         instances.clone(),
-    )?;
+    ).await?;
     add_instance(
         "Meow",
         "Quilt 1.21.11",
         "Box",
         instances.clone(),
-    )?;
+    ).await?;
     add_instance(
         "Meow",
         "Quilt 1.21.11",
         "Box",
         instances.clone(),
-    )?;
+    ).await?;
     add_instance(
         "Meow",
         "Quilt 1.21.11",
         "Box",
         instances.clone(),
-    )?;
+    ).await?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    ).await?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    ).await?;
 
     info("Window loaded!").await;
     ui.run()?;
@@ -67,12 +79,14 @@ pub async fn init() -> Result<(), Box<dyn std::error::Error>> {
 
 }
 
-pub fn add_instance(name: &str, version: &str, icon: &str, instances: InstanceList) -> Result<(), Box<dyn std::error::Error>> {
+pub async fn add_instance(name: &str, version: &str, icon: &str, instances: InstanceList) -> Result<(), Box<dyn std::error::Error>> {
+
+    info(format!("Registering instance {}", name).as_str()).await;
 
     instances.push(InstanceData {
         name: name.into(),
         version: version.into(),
-        icon: icon.into(),
+        icon: icon.to_lowercase().into(),
     });
 
     Ok(())
