@@ -71,6 +71,66 @@ pub async fn init() -> Result<(), Box<dyn std::error::Error>> {
         "Box",
         instances.clone(),
     ).await?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    ).await?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    ).await?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    ).await?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    ).await?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    ).await?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    ).await?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    ).await?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    ).await?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    ).await?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    ).await?;
 
     info("Window loaded!").await;
     ui.run()?;
