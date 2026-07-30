@@ -1,5 +1,4 @@
-import { SidebarState } from "../../state.slint";
-import { SidebarMenu as SidebarMenuState, SidebarMenu } from "../../state.slint";
+import { SidebarMenu as SidebarMenuState, SidebarState } from "../../state.slint";
 import { IconDisplay, IconSet, Icon } from "@lucide";
 
 export component SidebarMenu {
@@ -28,6 +27,14 @@ export component SidebarMenu {
                 : (touch-area.has-hover ? #2e2e2eaa : transparent);
             animate background {
                 duration: 100ms;
+            }
+            animation-timer := Timer {
+                interval: 100ms;
+                running: false;
+
+                triggered => {
+                    SidebarMenuState.is_animating = false;
+                }
             }
             touch-area := TouchArea {
                 mouse-cursor: pointer;

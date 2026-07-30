@@ -11,19 +11,16 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17f4922c-7825-4771-a70c-c39d4ade45bf" name="Changes" comment="Added FerrisLauncher text in the sidebar with an opening animation">
-      <change afterPath="$PROJECT_DIR$/src/launcher/ui_manager.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/menus/MainMenu.slint" afterDir="false" />
+    <list default="true" id="17f4922c-7825-4771-a70c-c39d4ade45bf" name="Changes" comment="Created tabs">
+      <change afterPath="$PROJECT_DIR$/ui/menus/Instance.slint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/menus/InstancesMenu.slint" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/launcher/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/launcher/mod.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/launcher/player_manager.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/launcher/player_manager.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/launcher/ui_manager.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/launcher/ui_manager.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/Window.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/Window.slint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/menus/MainMenu.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/menus/MainMenu.slint" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/sidebar/Sidebar.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/sidebar/Sidebar.slint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/sidebar/buttons/InstancesButton.slint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/sidebar/buttons/ModsButton.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/sidebar/buttons/SidebarMenu.slint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/sidebar/buttons/SidebarContainer.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/sidebar/buttons/SidebarContainer.slint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/sidebar/buttons/SidebarMenu.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/sidebar/buttons/SidebarMenu.slint" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/state.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/state.slint" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +29,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="25" />
+    <option name="cachedIndexableFilesCount" value="28" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
   <component name="FileTemplateManagerImpl">
@@ -79,37 +76,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cargo.Run.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.rust.reset.selective.auto.import": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/polokalap/RustroverProjects/FerrisLauncher/src/launcher/ui",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
-    "org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/launcher/player_manager.rs": "true",
-    "org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/launcher/ui/ui_manager.rs": "true",
-    "org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/mojang/player.rs": "true",
-    "org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/skin/head.rs": "true",
-    "org.rust.first.attach.projects": "true",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cargo.Run.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/polokalap/RustroverProjects/FerrisLauncher/src/launcher/ui&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/launcher/player_manager.rs&quot;: &quot;true&quot;,
+    &quot;org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/launcher/ui/ui_manager.rs&quot;: &quot;true&quot;,
+    &quot;org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/mojang/player.rs&quot;: &quot;true&quot;,
+    &quot;org.rust.disableDetachedFileInspection/home/polokalap/RustroverProjects/FerrisLauncher/src/skin/head.rs&quot;: &quot;true&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;slint.settings&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/launcher/ui" />
@@ -167,7 +165,9 @@
       <workItem from="1785165123221" duration="160000" />
       <workItem from="1785165317704" duration="27806000" />
       <workItem from="1785239267708" duration="6336000" />
-      <workItem from="1785252888037" duration="24187000" />
+      <workItem from="1785252888037" duration="28073000" />
+      <workItem from="1785340736662" duration="17175000" />
+      <workItem from="1785419188513" duration="18875000" />
     </task>
     <task id="LOCAL-00001" summary="Created logger">
       <option name="closed" value="true" />
@@ -241,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785190435600</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Created tabs">
+      <option name="closed" value="true" />
+      <created>1785280137137</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1785280137137</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +288,8 @@
     <MESSAGE value="Issue fixed with player skin downloading" />
     <MESSAGE value="Added license &amp; created UI base" />
     <MESSAGE value="Added FerrisLauncher text in the sidebar with an opening animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added FerrisLauncher text in the sidebar with an opening animation" />
+    <MESSAGE value="Created tabs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created tabs" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -289,5 +298,9 @@
         <watch expression="json.0.map.root.0.node.pointer" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

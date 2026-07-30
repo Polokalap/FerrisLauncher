@@ -1,10 +1,12 @@
 import { Sidebar } from "sidebar/Sidebar.slint";
 import { MainMenu } from "menus/MainMenu.slint";
+import { InstanceData } from "state.slint";
 import { SidebarState } from "state.slint";
 export { AccountMenuState } from "state.slint";
 export { SidebarState } from "state.slint";
 
 export component Window inherits Window {
+    in-out property <[InstanceData]> instances;
     width: 1200px;
     height: 700px;
     background: #1e1e1e;
@@ -18,6 +20,7 @@ export component Window inherits Window {
 
         MainMenu {
             width: 100%;
+            instances: root.instances;
         }
 
     }

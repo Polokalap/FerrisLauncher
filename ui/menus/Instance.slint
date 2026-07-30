@@ -1,0 +1,102 @@
+import { IconDisplay, IconSet, Icon } from "@lucide";
+import { SidebarState } from "../state.slint";
+
+export component Instance {
+    in-out property <string> name: "?";
+    in-out property <string> version: "?";
+    in-out property <Icon> icon: IconSet.Box;
+    width: SidebarState.is_open ? 215px : 256px;
+    height: SidebarState.is_open ? 130px : 146px;
+
+    Rectangle {
+        width: SidebarState.is_open ? 218px : 256px;
+        height: SidebarState.is_open ? 130px : 146px;
+        border-radius: 15px;
+        border-color: #4e4e4e;
+        background: #1e1e1e;
+        border-width: 2px;
+        clip: true;
+        VerticalLayout {
+            alignment: start;
+            padding: 10px;
+            HorizontalLayout {
+                spacing: 5px;
+                IconDisplay {
+                    icon: icon;
+                    stroke: #aeaeae;
+                    stroke-width: 2;
+                    size: 64px;
+                }
+                Rectangle {
+                    min-width: 0px;
+                    clip: true;
+                    VerticalLayout {
+                        padding-bottom: 3px;
+                        padding-top: 3px;
+                        Text {
+                            text: name;
+                            overflow: elide;
+                            font-size: 22px;
+                            color: #aeaeae;
+                            font-weight: 800;
+                            font-family: "Poppins";
+                        }
+                        Text {
+                            text: version;
+                            overflow: elide;
+                            font-size: 18px;
+                            color: #aeaeae;
+                            font-weight: 800;
+                            font-family: "Poppins";
+                        }
+                    }
+                }
+            }
+        }
+        VerticalLayout {
+            alignment: end;
+            padding: 15px;
+            HorizontalLayout {
+                alignment: start;
+                spacing: 10px;
+                Rectangle {
+                    border-radius: 5px;
+                    background: view-touch.has-hover ? #00b7ff88 : #00b7ff66;
+                    animate background {
+                        duration: 200ms;
+                        easing: ease-in-out;
+                    }
+                    width: 50%;
+                    view-touch := TouchArea {
+                        mouse-cursor: pointer;
+                    }
+                    Text {
+                        text: "View";
+                        color: #00b7ffcc;
+                        font-weight: 600;
+                        font-size: SidebarState.is_open ? 14px : 16px;
+                    }
+                }
+                Rectangle {
+                    border-radius: 5px;
+                    background: play-touch.has-hover ? #33ff5588 : #33ff5566;
+                    animate background {
+                        duration: 200ms;
+                        easing: ease-in-out;
+                    }
+                    width: 50%;
+                    play-touch := TouchArea {
+                        mouse-cursor: pointer;
+                    }
+                    Text {
+                        text: "Play";
+                        color: #33ff55cc;
+                        font-weight: 600;
+                        font-size: SidebarState.is_open ? 14px : 16px;
+                    }
+                }
+            }
+        }
+    }
+
+}

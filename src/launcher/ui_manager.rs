@@ -1,7 +1,11 @@
-use slint::{slint, ComponentHandle};
+use std::rc::Rc;
+use slint::{ComponentHandle, ModelRc, VecModel};
+
 use crate::launcher::player_manager::set_player;
 use crate::logger::info;
-use crate::Window;
+use crate::{Window, InstanceData};
+
+pub type InstanceList = Rc<VecModel<InstanceData>>;
 
 pub async fn init() -> Result<(), Box<dyn std::error::Error>> {
 
@@ -16,8 +20,60 @@ pub async fn init() -> Result<(), Box<dyn std::error::Error>> {
 
     });
 
+    let instances: Rc<VecModel<InstanceData>> = Rc::new(VecModel::default());
+    ui.set_instances(ModelRc::from(instances.clone()));
+
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    )?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    )?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    )?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    )?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    )?;
+    add_instance(
+        "Meow",
+        "Quilt 1.21.11",
+        "Box",
+        instances.clone(),
+    )?;
+
     info("Window loaded!").await;
     ui.run()?;
+
+    Ok(())
+
+}
+
+pub fn add_instance(name: &str, version: &str, icon: &str, instances: InstanceList) -> Result<(), Box<dyn std::error::Error>> {
+
+    instances.push(InstanceData {
+        name: name.into(),
+        version: version.into(),
+        icon: icon.into(),
+    });
 
     Ok(())
 

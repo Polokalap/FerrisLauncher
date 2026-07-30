@@ -1,10 +1,5 @@
-use std::iter::Once;
-use slint::Image;
-use crate::launcher::player_manager::set_player;
 use crate::launcher::ui_manager::init;
 use crate::logger::{error, info, warn, zip_latest};
-use crate::mojang::player::{fetch_profile, fetch_raw, get_texture_value};
-use crate::skin::head::{get_head, set_head};
 
 pub mod logger;
 pub mod mojang;
