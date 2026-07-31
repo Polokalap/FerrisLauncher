@@ -2,41 +2,29 @@ import { SidebarMenu, SidebarState, InstanceData } from "../state.slint";
 import { InstancesMenu } from "InstancesMenu.slint";
 
 export component MainMenu {
+    in-out property <int> columns: 4;
     in-out property <[InstanceData]> instances;
     width: 100%;
     height: 100%;
 
-    HorizontalLayout {
-        alignment: end;
-        padding: 15px;
-        padding-right: 75px;
-        padding-left: SidebarState.is_open ? 165px : 25px;
-        animate padding-top {
-            duration: 100ms;
-            easing: ease-in-out;
-        }
+    Rectangle {
 
-        animate padding-left {
-            duration: 100ms;
-            easing: ease-in-out;
-        }
+        width: 100%;
+        height: 100%;
 
-        Rectangle {
-
-            width: 100%;
-            height: 100%;
-
-            animate opacity {
-                duration: 100ms;
+        InstancesMenu {
+            x: SidebarState.is_open ? 165px : 30px;
+            y: 15px;
+            width: parent.width;
+            height: parent.height - 30px;
+            animate x {
+                duration: 150ms;
                 easing: ease-in-out;
             }
-
-            InstancesMenu {
-                visible: SidebarMenu.selected == 0;
-                instances: root.instances;
-            }
-
+            visible: SidebarMenu.selected == 0;
+            instances: root.instances;
         }
 
     }
+
 }

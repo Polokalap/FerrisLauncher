@@ -19,6 +19,7 @@ export component Sidebar {
             drop-shadow-color: #00000033;
             height: 100%;
             width: SidebarState.is_open ? 200px : 60px;
+            cache-rendering-hint: true;
             animate width {
                 duration: 150ms;
                 easing: ease-in-out;

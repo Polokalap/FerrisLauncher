@@ -12,6 +12,7 @@ export component SidebarMenu {
         alignment: start;
         padding: SidebarState.is_open ? 15px : 11px;
         padding-top: SidebarState.is_open ? -10px : 0;
+        cache-rendering-hint: true;
         animate padding {
             duration: 200ms;
             easing: ease-in-out;

@@ -11,10 +11,14 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17f4922c-7825-4771-a70c-c39d4ade45bf" name="Changes" comment="Added + tile to instances tab &amp; fixed a duplication issue, added logging for loading instances.">
+    <list default="true" id="17f4922c-7825-4771-a70c-c39d4ade45bf" name="Changes" comment="Added scrolling for instances :]">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/launcher/ui_manager.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/launcher/ui_manager.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/menus/Instance.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/menus/Instance.slint" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/menus/InstancesMenu.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/menus/InstancesMenu.slint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/menus/MainMenu.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/menus/MainMenu.slint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/sidebar/Sidebar.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/sidebar/Sidebar.slint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/sidebar/buttons/SidebarMenu.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/sidebar/buttons/SidebarMenu.slint" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +125,9 @@
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --package FerrisLauncher --bin FerrisLauncher" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <envs />
+      <envs>
+        <env name="SLINT_DEBUG_PERFORMANCE" value="refresh_full_speed,overlay,console" />
+      </envs>
       <option name="emulateTerminal" value="true" />
       <option name="channel" value="DEFAULT" />
       <option name="requiredFeatures" value="true" />
@@ -162,6 +168,7 @@
       <workItem from="1785340736662" duration="17175000" />
       <workItem from="1785419188513" duration="18998000" />
       <workItem from="1785445289692" duration="6755000" />
+      <workItem from="1785518445361" duration="15179000" />
     </task>
     <task id="LOCAL-00001" summary="Created logger">
       <option name="closed" value="true" />
@@ -276,7 +283,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
